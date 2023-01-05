@@ -101,7 +101,7 @@ public class BlockingBufferTests {
         final BlockingBuffer<Record<String>> blockingBuffer = new BlockingBuffer<>(TEST_BUFFER_SIZE, TEST_BATCH_SIZE,
                 TEST_PIPELINE_NAME);
         assertThat(blockingBuffer, notNullValue());
-        final Collection<Record<String>> testRecords = generateBatchRecords(TEST_BUFFER_SIZE + 1);
+         final Collection<Record<String>> testRecords = generateBatchRecords(TEST_BUFFER_SIZE + 1);
         assertThrows(SizeOverflowException.class, () -> blockingBuffer.writeAll(testRecords, TEST_WRITE_TIMEOUT));
         verifyBufferUsageMetric(0);
     }

@@ -40,4 +40,5 @@ class S3SourceTest {
     void start_should_throw_IllegalStateException_when_buffer_is_null() {
         assertThrows(IllegalStateException.class, () -> s3Source.start(null));
     }
+
 }
